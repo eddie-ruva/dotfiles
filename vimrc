@@ -110,6 +110,11 @@ nnoremap <c-l> <c-w>l
 
 map <leader>p :CtrlP<cr>
 
+" Move around syntastic errors
+map <leader>] :lnext<CR>
+map <leader>[ :lprev<CR>
+
+
 
 
 
