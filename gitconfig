@@ -2,21 +2,21 @@
 	name = Edilberto Ruvalcaba
 	email = eddie.ruva@gmail.com
 [core]
-  editor = vim
+	editor = vim
 [diff]
 [color]
-    ui = auto
+	ui = auto
 [alias]
-  ci = commit
-  ca = commit --amend
-  co = checkout
-  st = status
-  br = branch
-  h  = log --pretty=format:'%Creset%C(red bold)[%ad] %Creset%C(blue bold)%h %Creset%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset' --graph --abbrev-commit --date=short
-  ha  = log --pretty=format:'%Creset%C(red bold)[%ad] %Creset%C(blue bold)%h %Creset%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset' --graph --all --abbrev-commit --date=short
-  ds = diff --staged
-  amend = commit --amend -C HEAD
-  undo = reset --soft HEAD^
-  standup = log --since '1 day ago' --oneline --author eddie.ruva@gmail.com
+	ci = commit
+	ca = commit --amend
+	co = checkout
+	st = status
+	br = branch
+	h  = log --pretty=format:'%Creset%C(red bold)[%ad] %Creset%C(blue bold)%h %Creset%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset' --graph --abbrev-commit --date=short
+	ha  = log --pretty=format:'%Creset%C(red bold)[%ad] %Creset%C(blue bold)%h %Creset%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset' --graph --all --abbrev-commit --date=short
+	ds = diff --staged
+	amend = commit --amend -C HEAD
+	undo = reset --soft HEAD^
+	standup = log --since '1 day ago' --oneline --author eddie.ruva@gmail.com
 [credential]
 	helper = cache
