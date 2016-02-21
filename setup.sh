@@ -23,7 +23,7 @@ echo "done"
 for full_path in $dir/*
 do
   file_name="${full_path##*/}"
-  if [ "${file_name}" != "${script_name}" ]
+  if [[ "${file_name}" != "${script_name}" ]] && [[ -f $file_name ]]
   then
     echo "Moving existing dotfiles ----  ${file_name} ----- ~ to $olddir"
     mv ~/.$file_name $olddir
