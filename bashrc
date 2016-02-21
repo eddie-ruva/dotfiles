@@ -1,17 +1,78 @@
-# Based on Gary Bernhardt
-# https://github.com/garybernhardt/dotfiles/blob/master/.bashrc
-. ~/bin/bash_colors.sh
-
-export PATH=${PATH}:/usr/local/bin
-export PATH="~/bin:$PATH"
-
 # Erase duplicates in history
 export HISTCONTROL=erasedups
 
 # Store 10k history entries
 export HISTSIZE=10000
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export NVM_DIR="/Users/eddie/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+##### ALIASES
+alias g='git'
+
+########################################################################
+# HELPERS
+########################################################################
+# Create Work in progress commit
+function wip() {
+  git add .
+  git commit -m "WIP: $1"
+}
+
+# Set the current terminal tab title
+function title() {
+  echo -ne "\033]0; $1 \007"
+}
+########################################################################
+# Matthew's Git Bash Prompt
+########################################################################
+        RED="\[\033[0;31m\]"
+     YELLOW="\[\033[0;33m\]"
+    GREEN="\[\033[0;32m\]"
+       BLUE="\e[1;94m"
+  LIGHT_RED="\[\033[1;31m\]"
+LIGHT_GREEN="\[\033[1;32m\]"
+      WHITE="\[\033[1;37m\]"
+ LIGHT_GRAY="\[\033[0;37m\]"
+ COLOR_NONE="\[\e[0m\]"
+
+function parse_git_branch {
+  git rev-parse --git-dir &> /dev/null
+  git_status="$(git status 2> /dev/null)"
+  branch_pattern="On branch ([^${IFS}]*)"
+  remote_pattern="Your branch is (.*) '"
+  diverge_pattern="Your branch and (.*) have diverged"
+
+  if [[ ! ${git_status}} =~ "working directory clean" ]]; then
+    state="${RED} 🙉"
+  fi
+  # add an else if or two here if you want to get more specific
+  if [[ ${git_status} =~ ${remote_pattern} ]]; then
+    if [[ ${BASH_REMATCH[1]} == "ahead of" ]]; then
+      remote="${YELLOW}↑"
+    elif [[ ${BASH_REMATCH[1]} == "up-to-date with" ]]; then
+      remote="${GREEN}✓"
+    else
+      remote="${YELLOW}↓"
+    fi
+  fi
+  if [[ ${git_status} =~ ${diverge_pattern} ]]; then
+    remote="${YELLOW}↕"
+  fi
+  if [[ ${git_status} =~ ${branch_pattern} ]]; then
+    branch=${BASH_REMATCH[1]}
+
+    if [[ (${state}) || (${remote}) ]]; then
+      echo " (${branch}) ${remote}${state}"
+    else
+      echo " (${branch}) ${GREEN}✓"
+    fi
+  fi
+}
+
+function prompt_func() {
+    prompt="${BLUE}\u@\h ${YELLOW}\w${GREEN}$(parse_git_branch)${BLUE}${COLOR_NONE}"
+    PS1="${prompt}\n${RED}$ ${COLOR_NONE}"
+}
+
+PROMPT_COMMAND=prompt_func
