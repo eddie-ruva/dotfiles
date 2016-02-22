@@ -14,7 +14,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'msanders/snipmate.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils' " vim-snipmate
+Plugin 'tomtom/tlib_vim' " vim-snipmate
+Plugin 'garbas/vim-snipmate' "vim-snipmate
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
@@ -85,11 +87,6 @@ let mapleader=","
 map ! :!
 " Change to alternate file
 map <leader><leader> <c-^>
-
-" Create folders
-map <leader>f :!mkdir -p %%
-map <leader>F :!mkdir -p
-
 
 vmap <C-c> :w !pbcopy<CR>
 

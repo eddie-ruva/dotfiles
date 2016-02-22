@@ -4,7 +4,7 @@ export HISTCONTROL=erasedups
 # Store 10k history entries
 export HISTSIZE=10000
 
-export NVM_DIR="/Users/eddie/.nvm"
+export NVM_DIR="/Users/edilberto/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 ##### ALIASES
