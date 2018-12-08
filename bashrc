@@ -15,7 +15,7 @@ alias vim="nvim"
 alias vi="nvim"
 
 ########################################################################
-# Matthew's Git Bash Prompt - TODO: Add url for credit, I forgot where 
+# Matthew's Git Bash Prompt - TODO: Add url for credit, I forgot where
 # I got this from :(
 ########################################################################
         RED="\[\033[0;31m\]"
@@ -35,14 +35,14 @@ function parse_git_branch {
   remote_pattern="Your branch is (.*) '"
   diverge_pattern="Your branch and (.*) have diverged"
 
-  if [[ ! ${git_status}} =~ "working directory clean" ]]; then
+  if [[ ! ${git_status}} =~ "nothing to commit, working tree clean" ]]; then
     state="${RED} 🙉"
   fi
   # add an else if or two here if you want to get more specific
   if [[ ${git_status} =~ ${remote_pattern} ]]; then
     if [[ ${BASH_REMATCH[1]} == "ahead of" ]]; then
       remote="${YELLOW}↑"
-    elif [[ ${BASH_REMATCH[1]} == "up-to-date with" ]]; then
+    elif [[ ${BASH_REMATCH[1]} == "up to date with" ]]; then
       remote="${GREEN}✓"
     else
       remote="${YELLOW}↓"
