@@ -11,6 +11,8 @@ export NVM_DIR="$HOME/.nvm"
 
 ##### ALIASES
 alias g='git'
+alias vim="nvim"
+alias vi="nvim"
 
 ########################################################################
 # HELPERS
