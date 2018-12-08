@@ -15,20 +15,8 @@ alias vim="nvim"
 alias vi="nvim"
 
 ########################################################################
-# HELPERS
-########################################################################
-# Create Work in progress commit
-function wip() {
-  git add .
-  git commit -m "WIP: $1"
-}
-
-# Set the current terminal tab title
-function title() {
-  echo -ne "\033]0; $1 \007"
-}
-########################################################################
-# Matthew's Git Bash Prompt
+# Matthew's Git Bash Prompt - TODO: Add url for credit, I forgot where 
+# I got this from :(
 ########################################################################
         RED="\[\033[0;31m\]"
      YELLOW="\[\033[0;33m\]"
