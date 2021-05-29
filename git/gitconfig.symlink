@@ -4,11 +4,18 @@
 [hub]
         protocol = https
 [alias]
+        amend = commit --amend -C HEAD
+        br = branch
+        ca = commit --amend
+        ci = commit
         co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
+        co = checkout
         count   = !git shortlog -sn
+        ds = diff --staged
+        l  = log --pretty=format:'%Creset%C(red bold)[%ad] %Creset%C(blue bold)%h %Creset%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset' --graph --abbrev-commit --date=short
+        la  = log --pretty=format:'%Creset%C(red bold)[%ad] %Creset%C(blue bold)%h %Creset%C(magenta bold)%d %Creset%s %C(green bold)(%an)%Creset' --graph --all --abbrev-commit --date=short
+        st = status
+        undo = reset --soft HEAD^
 [color]
         diff = auto
         status = auto

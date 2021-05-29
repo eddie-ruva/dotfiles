@@ -1,0 +1,15 @@
+--type-set=tsx=.tsx
+--type-set=scss=.scss
+--type-set=lock=.lock
+--type-set=csv=.csv
+--type-set=snap=.snap
+--type-set=md=.md
+--ignore-file=match:yarn.lock
+--ignore-file=match:.eslintcache
+--ignore-dir=dist
+--ignore-dir=.storybook
+--ignore-dir=.jest
+--ignore-dir=.cache
+--ignore-dir=build
+--ignore-dir=.nyc_output
+--ignore-dir=coverage

@@ -1,0 +1,25 @@
+export DOTFILES=$HOME/.dotfiles/zsh
+
+source $DOTFILES/aliases.zsh
+
+ #Initialize completion system
+autoload -U compinit; compinit
+
+# Enabling and setting git info var to be used in prompt config.
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr '🐵'
+zstyle ':vcs_info:*' unstagedstr '🙈'
+zstyle ':vcs_info:git*' formats "(%b) %m%u%c "
+
+# Executed before each prompt.
+# http://zsh.sourceforge.net/Doc/Release/Functions.html
+precmd() {
+    vcs_info
+}
+
+# Enable substitution in the prompt.
+setopt PROMPT_SUBST
+
+PROMPT='%F{117}%~%f %F{069}${vcs_info_msg_0_}%f %F{121}ᐅ%f '

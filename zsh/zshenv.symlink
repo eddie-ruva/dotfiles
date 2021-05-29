@@ -1,0 +1,7 @@
+# Should only contain user’s environment variables.
+# https://thevaluable.dev/zsh-install-configure-mouseless/
+
+export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
+export HISTCONTROL=erasedups            # Erase duplicates in history
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file

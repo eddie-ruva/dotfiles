@@ -5,35 +5,34 @@
 set nocompatible              " required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle.vim
-call vundle#begin()
+" set the runtime path to include Plug and initialize
+call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle, required
-Plugin 'kien/ctrlp.vim'
-Plugin 'othree/html5.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'MarcWeber/vim-addon-mw-utils' " vim-snipmate
-Plugin 'tomtom/tlib_vim' " vim-snipmate
-Plugin 'garbas/vim-snipmate' "vim-snipmate
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'elzr/vim-json'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'tpope/vim-rails'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-surround'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'gmarik/Vundle.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'othree/html5.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'MarcWeber/vim-addon-mw-utils' " vim-snipmate
+Plug 'tomtom/tlib_vim' " vim-snipmate
+Plug 'garbas/vim-snipmate' "vim-snipmate
+Plug 'ervandew/supertab'
+Plug 'scrooloose/syntastic'
+Plug 'kchmck/vim-coffee-script'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'elzr/vim-json'
+Plug 'Lokaltog/vim-powerline'
+Plug 'tpope/vim-rails'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-surround'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'gmarik/Vundle.vim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()              " required
 filetype plugin indent on    " required
 
 

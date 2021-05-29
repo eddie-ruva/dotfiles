@@ -3,3 +3,5 @@
         email = AUTHOREMAIL
 [credential]
         helper = GIT_CREDENTIAL_HELPER
+[alias]
+        standup = log --since '1 day ago' --oneline --author "AUTHORNAME"

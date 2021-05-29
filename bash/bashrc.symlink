@@ -11,8 +11,6 @@ export NVM_DIR="$HOME/.nvm"
 
 ##### ALIASES
 alias g='git'
-alias vim="nvim"
-alias vi="nvim"
 
 ########################################################################
 # Matthew's Git Bash Prompt - TODO: Add url for credit, I forgot where
