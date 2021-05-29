@@ -27,6 +27,11 @@ install_brew_packages () {
   brew install ack
 }
 
+install_nvm () {
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+}
+
 install_homebrew
 install_brew_packages
 install_vim_plug
+install_nvm
